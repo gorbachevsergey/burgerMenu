@@ -1,28 +1,37 @@
+.navMain{
+    background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: 100% 100%;
+
+}
 .nav{
     display: flex;
     height: 200px;
     width:auto;
-    background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
-    background-repeat: no-repeat;
-    background-size:100% 100%;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .menuBurgerList{
-    display: none;
-    transition: all .2s ease-in-out;
-
-
+    height:0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
 }
+
+.menuBurgerListActive{
+    height:auto;
+    opacity: 1;
+    visibility: visible;
+}
+
 .navMenu{
     display: flex;
     width: 85%;
     height: 85%;
     justify-content: space-around;
 }
-
 .nav .navMenu h1 {
     display: flex;
     color:white;
@@ -47,14 +56,14 @@
     justify-content: center;
 }
 
-.nav .navMenu li{
+.list_it{
     display: flex;
     padding: 0 15px;
     list-style-type:none;
     align-items: center;
 }
 
-.nav .navMenu a {
+.list_it a {
     color:white;
     font-family: 'Ubuntu',sans-serif;
     font-weight:300;
@@ -65,12 +74,30 @@
     transition-duration: 1s;
 }
 
+.list_it_active {
+    padding-bottom: 10px;
+}
 .menuBurger{
     display: none;
 }
 
-.nav .navMenu a:hover {
+.btnShowNav{
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, white 20%, transparent 21%, transparent 40%,
+                                white 41%, white 60%, transparent 61%, transparent 80%,
+                                white 81%, white 100%);
+    border:none;
+}
+
+.btnShowNavActive{
+    background: linear-gradient(45deg,transparent 45%, white 46%, white 55%, transparent 56%),
+                linear-gradient(-45deg,transparent 45%, white 46%, white 55%, transparent 56%);
+}
+
+.list_it a:hover {
     color:deepskyblue;
+    font-size: 2em;
 }
 
 @media (max-width: 1090px) {
@@ -107,19 +134,9 @@
     .navMenu{
         flex-direction:row;
     }
-    .btnShowNav{
-        height: 70px;
-        width: 50px;
-        background-color: unset;
-        border: none;
-    }
-    .btnShowNav p:hover {
-        color:deepskyblue;
-    }
     .nav .navMenu h1{
         font-size: 2em;
         width:70%;
-
     }
     .btnShowNav p{
         font-size: 45px;
